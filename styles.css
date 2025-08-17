@@ -1,92 +1,173 @@
+/* =========
+   Parking Spot Styles - Customized
+   Color Palette: #78B9B5, #0F828C, #065084, #320A6B
+   ========= */
+
+/* Root colors */
+:root {
+  --bg: #78B9B5;       /* Light background */
+  --card: #0F828C;     /* Cards / form bg */
+  --text: #065084;     /* Main text */
+  --muted: #320A6B;    /* Muted text / labels */
+  --accent: #065084;   /* Buttons / highlights */
+  --accent-2: #0F828C; /* Gradient accent */
+  --border: #065084;   /* Borders */
+}
+
 /* General Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fafafa;
-    color: #4a4a4a;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
 header {
-    background-color: #1d4d32;
-    color: white;
-    padding: 20px 30px;
-    text-align: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  padding: 20px 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-bottom: 2px solid var(--border);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 10px 15px;
-    border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Main content */
 main {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-footer {
-    background-color: #1d4d32;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-    margin-top: 30px;
+.card {
+  background-color: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  color: #fff;
 }
 
-/* Placeholder Styling */
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: #E1E9C9;  /* Light bg for inputs */
+  color: var(--text);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
 input::placeholder,
 textarea::placeholder {
-    color: #999; /* Light grey color for placeholders */
-    font-style: italic; /* Slightly different style for placeholders */
+  color: var(--muted);
+  font-style: italic;
 }
 
-/* Focused State for Placeholders */
-input:focus::placeholder,
-textarea:focus::placeholder {
-    color: #1d4d32; /* Change color when input is focused */
-    font-style: normal; /* Remove italic when focused */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: #fff;
+  color: var(--accent-2);
 }
 
-/* Input and Textarea styles */
-input, textarea {
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-top: 2px solid var(--border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  input, textarea {
+    padding: 10px 14px;
+  }
+
+  .btn {
     width: 100%;
-    padding: 12px 18px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    color: #4a4a4a;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    padding: 12px 0;
+  }
 }
 
-/* Hover effect for inputs */
-input:hover, textarea:hover {
-    border-color: #248024;
-    background-color: #f1f1f1;
-}
-
-/* Focus state for input and textarea */
-input:focus, textarea:focus {
-    border-color: #1d4d32;
-    background-color: #ffffff;
-    outline: none;
+/* Mobile-friendly form: label above input */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--muted);
 }
