@@ -1,20 +1,15 @@
-/* =========
-   Parking Spot Styles - Customized
-   Color Palette: #78B9B5, #0F828C, #065084, #320A6B
-   ========= */
 
-/* Root colors */
 :root {
-  --bg: #78B9B5;       /* Light background */
-  --card: #0F828C;     /* Cards / form bg */
-  --text: #065084;     /* Main text */
-  --muted: #320A6B;    /* Muted text / labels */
-  --accent: #065084;   /* Buttons / highlights */
-  --accent-2: #0F828C; /* Gradient accent */
-  --border: #065084;   /* Borders */
+  --bg: #78B9B5;       
+  --card: #0F828C;     
+  --text: #065084;     
+  --muted: #320A6B;    
+  --accent: #065084;  
+  --accent-2: #0F828C; 
+  --border: #065084;   
 }
 
-/* General Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -91,7 +86,7 @@ input, textarea {
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background-color: #E1E9C9;  /* Light bg for inputs */
+  background-color: #E1E9C9;  
   color: var(--text);
   margin-bottom: 16px;
   transition: all 0.3s ease;
@@ -164,10 +159,11 @@ footer {
   }
 }
 
-/* Mobile-friendly form: label above input */
+
 label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
   color: var(--muted);
 }
+
